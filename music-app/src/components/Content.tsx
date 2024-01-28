@@ -1,13 +1,16 @@
 import React from 'react'
 import '../App.css'
 import { Songs, Sidebar } from './'
+import { Flex } from 'rebass'
 
 const Content = () => {
   return (
-    <div className='content-container'>
+    // <div className='content-container'>
+    <Flex>
         <Sidebar />
         <Songs />
-    </div>
+    </Flex>
+    // </div>
     
   )
 }

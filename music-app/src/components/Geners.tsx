@@ -1,11 +1,13 @@
 import React from 'react'
 import '../App.css'
+import { GenersStyled } from './styled/GenersStyled'
 
 const Geners = () => {
   return (
-    <div className='geners sidebar-text'>
-        <div>Geners</div>
-    </div>
+    // <div className='geners sidebar-text'>
+    <GenersStyled>
+      Geners
+    </GenersStyled>
 
   )
 }

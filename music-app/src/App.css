@@ -1,35 +1,32 @@
 /* Navar Related*/
-.navbar{
+/* .navbar{
   background: #3898dd;
   display: flex;
   flex-direction: row;
-}
+} */
 
 /* Logo Related */
-.logo{
+/* .logo{
   flex-basis: 255px;
   flex-grow: 0;
-}
+} */
 /* Search Related */
-.search{
+/* .search{
   flex-grow: 1;
-}
+} */
 
 /*Body Related*/
-.body{
-  /* display: flex; */
-  /* width: 1600px;
-  height: 1116px; */
+/* .body{
   margin: 0;
   padding: 0;
   background: #000;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-}
+} */
 
 /*Container Related*/
-.content-container{
+/* .content-container{
   display: flex;
   flex-direction: row;
   margin: 0;
@@ -37,10 +34,10 @@
   justify-content: space-around;
   flex-flow: row wrap;
   align-items: stretch;
-}
+} */
 
 /*Sidebar Related*/
-.sidebar-box {
+/* .sidebar-box {
   width: 254px;
   height: 629px;
   flex-shrink: 0;
@@ -52,9 +49,9 @@
   gap: 10px;
   flex-grow: 0;
   flex-basis: 255px;
-}
+} */
 
-.sidebar-text{
+/* .sidebar-text{
   color: #FFF;
   font-family: Poppins;
   font-size: 14px;
@@ -63,31 +60,28 @@
   line-height: normal;
   text-decoration: none;
   flex-grow: 0;
-  /* display: flex;
-  justify-content: center; */
-}
+} */
 
-.geners{
+/* .geners{
   background: #3898dd;
   margin-top: 80%;
   flex-grow: 1;
-  /* flex-basis: 100px; */
   display: flex;
   flex-direction: row;
-}
+} */
 
 /*Songs Related*/
-.songs{
+/* .songs{
   background: #f97f7f;
   flex-grow: 1;
-}
+} */
 
-.footer{
+/* .footer{
   flex-grow: 1;
   background: #dddd38;
-}
+} */
 
-.navbar-text{
+/* .navbar-text{
   color: #FFF;
   font-family: Poppins;
   font-size: 14px;
@@ -95,9 +89,7 @@
   font-weight: 600;
   line-height: normal;
   text-decoration: none;
-  /* display: flex;
-  justify-content: center; */
-}
+} */
 
 /* .App {
   flex-grow: 1;

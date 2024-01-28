@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { SongType } from '../models/models'
 import { Song } from './'
+import { SongsStyled } from './styled/SongsStyled'
 
 interface SongsStateType {
     songs: SongType[];
@@ -30,7 +31,9 @@ const Songs = () => {
 
   return (
     <>
-            <div className='songs'>Songs</div>
+            <SongsStyled>
+              Songs
+            </SongsStyled>
             {/* {
                 songs?.map((song: SongType) => (
                     <>
