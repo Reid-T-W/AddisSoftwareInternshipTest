@@ -1,0 +1,26 @@
+# docker-compose.yml
+
+version: "3.9"
+services:
+  music-app:
+    container_name: music-app-api
+    build:
+      dockerfile: Dockerfile
+      context: .
+    environment:
+      - PORT=${PORT}
+      - MONGO_URI=${MONGO_URI}
+    command: npm start
+    ports:
+      - "4000:4000"
+# services:
+#   musicapp:
+#     build:
+#       context: .
+#     environment:
+#       PORT: ${PORT}
+#       MONGO: postgres
+#       DB_PASSWORD: postgres
+#       DB_HOST: postgres
+#     ports:
+#       - '4000:4000'
