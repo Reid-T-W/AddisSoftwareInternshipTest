@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 // get all songs
 const getSongs = async(req, res) => {
     // newly added songs will be listed first
-    const songs = await Song.find({}).sort({createdAt: -1})
+    const songs = await Song.find({}).select('title album artist genere').sort({createdAt: -1})
     res.status(200).json(songs)
 }
 
