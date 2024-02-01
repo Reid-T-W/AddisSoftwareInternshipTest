@@ -52,9 +52,9 @@ const Songs = () => {
                 </div>
 
                 {songs.map((song: SongType) => (
-                <Song key={song.id}
-                  songId={song.id}
-                  songName={song.songName} 
+                <Song key={song._id}
+                  songId={song._id}
+                  songName={song.title} 
                   songAlbum = {song.album}
                   songArtist = {song.artist}
                   songGenere = {song.genere}
