@@ -46,8 +46,8 @@ const updateSong = async(req, res) => {
     }
 
     const song = await Song.findOneAndUpdate({_id: id}, {
-        ...req.body
-    })
+        ...req.body,
+    }, {new: true}).select('title album artist genere')
 
     if (!song) {
         return res.status(400).json({error: 'No such song'})
