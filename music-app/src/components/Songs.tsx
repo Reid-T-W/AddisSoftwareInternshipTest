@@ -4,7 +4,6 @@ import { Song } from './'
 import { SongsStyled } from './styled/SongsStyled'
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../state/store"
-import { addSong, removeSong, updateSong } from '../state/songs/songsSlice';
 
 // interface SongsStateType {
 //     songs: SongType[];

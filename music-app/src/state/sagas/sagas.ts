@@ -5,22 +5,9 @@ import { fetchSongsRequested,
          fetchSongsSucceeded, 
          fetchSongsFailed,
          editSongSucceeded,
-         editSongFailed } from '../songs/songsSlice';
-// require('dotenv').config()
-// // Define action types
-// const USER_FETCH_REQUESTED = 'USER_FETCH_REQUESTED';
-// const USER_FETCH_SUCCEEDED = 'USER_FETCH_SUCCEEDED';
-// const USER_FETCH_FAILED = 'USER_FETCH_FAILED';
-
-// const userFetchSucceeded = (user: any) => ({
-//     type: USER_FETCH_SUCCEEDED,
-//     user,
-// });
-
-// const userFetchFailed = (message: string) => ({
-//     type: USER_FETCH_FAILED,
-//     message,
-//   });
+         editSongFailed,
+         deleteSongSucceeded,
+         deleteSongFailed } from '../songs/songsSlice';
 
 const getSongs = () => {
   return axios.get<SongType[]>(`${process.env.REACT_APP_URL}/songs`)
@@ -35,6 +22,13 @@ const patchSong = (song: SongType) => {
   .then((response) => {
     return response.data
   });
+}
+
+const deleteSong = (songId: number) => {
+  return axios.delete<SongType[]>(`${process.env.REACT_APP_URL}/songs/${songId}`)
+  .then((response) => {
+    return response.data
+  })
 }
 // worker saga: will be fired on GET_SONGS_REQUESTED actions
 function* fetchSongs(action: any):Generator<Effect, void, any> {
@@ -57,11 +51,12 @@ function* editSong(action: any):Generator<Effect, void, any> {
 }
 
 // worker saga: will be fired on DELETE_SONG_REQUESTED actions
-function* deleteSong(action: any):Generator<Effect, void, any> {
+function* removeSong(action: any):Generator<Effect, void, any> {
   try {
-
+    const response: SongType[] = yield call(deleteSong, action.payload)
+    yield put(deleteSongSucceeded(response))
   } catch (e: any) {
-
+    yield put(deleteSongFailed(e.message))
   }
 }
 
@@ -69,7 +64,7 @@ function* deleteSong(action: any):Generator<Effect, void, any> {
 function* mySaga() {
   yield takeEvery('GET_SONGS_REQUESTED', fetchSongs)
   yield takeEvery('EDIT_SONG_REQUESTED', editSong)
-  yield takeEvery('DELETE_SONG_REQUESTED', deleteSong)
+  yield takeEvery('DELETE_SONG_REQUESTED', removeSong)
 }
 
 

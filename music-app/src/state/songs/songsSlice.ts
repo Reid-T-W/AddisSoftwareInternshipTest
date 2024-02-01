@@ -19,18 +19,6 @@ const songsSlice = createSlice({
             const newSong = action.payload;
             state.songs.push(newSong);
         },
-        removeSong: (state, action) => {
-            const songIdToRemove = action.payload;
-            const songs = state.songs.filter(song => song._id !== songIdToRemove);
-            state.songs = songs
-        },
-        updateSong: (state, action) => {
-            const songIdToUpdate = action.payload[0];
-            const editedSong = action.payload[1];
-            const songs: SongType[] = state.songs.filter(song => song._id !== songIdToUpdate);
-            songs.push(editedSong);
-            state.songs = songs
-        },
         fetchSongsRequested: (state, action) => {
             console.log("Fetching songs ...")
         },
@@ -44,7 +32,6 @@ const songsSlice = createSlice({
             state.editSong = action.payload;
         },
         editSongSucceeded: (state, action) => {
-            console.log("In edit song", action.payload)
             const songs = state.songs
             songs.map(song => 
                 song._id === action.payload._id ? action.payload : song
@@ -53,17 +40,25 @@ const songsSlice = createSlice({
         },
         editSongFailed: (state, action) => {
             console.log("Failed to update song")
+        },
+        deleteSongSucceeded: (state, action) => {
+            const songIdToRemove = action.payload._id;
+            const songs = state.songs.filter(song => song._id !== songIdToRemove);
+            state.songs = songs
+        },
+        deleteSongFailed: (state, action) => {
+            console.log("Failed to delete song")
         }
     }
 })
 
 export const { addSong, 
-               removeSong, 
-               updateSong, 
                fetchSongsRequested, 
                fetchSongsSucceeded, 
                fetchSongsFailed,
                setEditSong,
                editSongSucceeded,
-               editSongFailed } = songsSlice.actions;
+               editSongFailed,
+               deleteSongSucceeded,
+               deleteSongFailed } = songsSlice.actions;
 export default songsSlice.reducer;

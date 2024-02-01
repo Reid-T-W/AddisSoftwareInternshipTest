@@ -5,7 +5,7 @@ import { MdDelete } from "react-icons/md";
 import { FiSave } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../state/store"
-import { fetchSongsFailed, setEditSong, updateSong, removeSong } from '../state/songs/songsSlice';
+import { fetchSongsFailed, setEditSong, } from '../state/songs/songsSlice';
 
 interface SongProps {
   songId: number;
@@ -68,7 +68,10 @@ const Song: React.FC<SongProps> =
             <CiEdit size={22} style={{color: 'white'}}/>
           </button>
         }
-        <button onClick={() => dispatch(removeSong(songId))} type='button'>
+        <button onClick={() => dispatch({
+                          type: 'DELETE_SONG_REQUESTED',
+                          payload: songId
+                          })} type='button'>
           <MdDelete size={22} style={{color: 'white'}} />
         </button>
       </div>
