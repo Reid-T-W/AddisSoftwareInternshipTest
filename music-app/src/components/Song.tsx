@@ -46,11 +46,6 @@ const Song: React.FC<SongProps> =
         {
           editSong?<button onClick={()=> 
               {
-                dispatch(updateSong([songId, {id: songId, 
-                                              songName: localSongName,
-                                              album: localSongAlbum,
-                                              artist: localSongArtist,
-                                              genere: localSongGenere}]))
                 dispatch({
                           type: 'EDIT_SONG_REQUESTED',
                           payload: {
