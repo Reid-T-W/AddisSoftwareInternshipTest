@@ -51,6 +51,15 @@ const Song: React.FC<SongProps> =
                                               album: localSongAlbum,
                                               artist: localSongArtist,
                                               genere: localSongGenere}]))
+                dispatch({
+                          type: 'EDIT_SONG_REQUESTED',
+                          payload: {
+                            _id: songId, 
+                            title: localSongName,
+                            album: localSongAlbum,
+                            artist: localSongArtist,
+                            genere: localSongGenere}
+                          })
                 dispatch(setEditSong(false))
               }
             } type='button'>
