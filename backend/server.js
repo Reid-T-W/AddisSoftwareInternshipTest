@@ -3,12 +3,16 @@ const express = require('express')
 const routes = require('./routes/index')
 const exp = require('constants')
 const mongoose = require('mongoose')
+const cors = require('cors');
 
 // express app
 const app = express()
 
 // middleware
 app.use(express.json())
+
+// cors middleware
+app.use(cors());
 
 // middleware to log requests
 app.use((req, res, next) => {
