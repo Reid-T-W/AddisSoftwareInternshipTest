@@ -4,6 +4,7 @@ import { Song } from './'
 import { SongsStyled } from './styled/SongsStyled'
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../state/store"
+import { Button } from 'rebass'
 
 // interface SongsStateType {
 //     songs: SongType[];
@@ -11,28 +12,14 @@ import { RootState } from "../state/store"
 // }
 
 const Songs = () => {
+    const [localSongName, setLocalsongname] = useState("")
+    const [localSongAlbum, setLocalsongalbum] = useState("")
+    const [localSongArtist, setLocalsongartist] = useState("")
+    const [localSongGenere, setLocalsonggenere] = useState("")
+
     const songs = useSelector((state: RootState) => state.songs.songs)
     const dispatch = useDispatch();
 
-//   const [songs, setSongs] = useState<SongType[]>([])
-
-//   let songsList:SongType[] = [
-//     {id: 1, songName: 'Song1', album: 'Album1', artist: 'Artist1', genere: 'Genere1'},
-//     {id: 2, songName: 'Song1', album: 'Album1', artist: 'Artist1', genere: 'Genere1'},
-//     {id: 3, songName: 'Song1', album: 'Album1', artist: 'Artist1', genere: 'Genere1'},
-//     {id: 4, songName: 'Song1', album: 'Album1', artist: 'Artist1', genere: 'Genere1'}
-//   ]
-
-//   useEffect(()=>{
-//     songsList.forEach((item: SongType) => {
-//         // console.log("song: ", song)
-//         // setSongs([...songs, item])
-//         setSongs(prevSongs => [...prevSongs, item]);
-//       })
-//   },[])
-
-  
-//   console.log("songs", songs)
   useEffect(()=>{
     dispatch({type: 'GET_SONGS_REQUESTED'})
   }, [dispatch])
@@ -43,12 +30,12 @@ const Songs = () => {
               Songs
 
               <div className="flex-table">
-                <div className="flex-table-header">
+                {/* <div className="flex-table-header">
                   <div className="flex-table-data heading-text">Name</div>
                   <div className="flex-table-data heading-text">Album</div>
                   <div className="flex-table-data heading-text">Artist</div>
                   <div className="flex-table-data heading-text">Genere</div>
-                </div>
+                </div> */}
 
                 {songs.map((song: SongType) => (
                 <Song key={song._id}
@@ -59,26 +46,25 @@ const Songs = () => {
                   songGenere = {song.genere}
                 />
               ))}
-
-
-            </div>
-
-
-
-              {/* <button onClick={() => dispatch(addSong({id: 1, songName: 'Song1', album: 'Album1', artist: 'Artist1', genere: 'Genere1'}))}>Add Song</button>
-              <button onClick={() => dispatch(removeSong(1))}>Remove Song</button>
-              <button onClick={() => dispatch(updateSong([1, {id: 1, songName: 'UpdatedSong', album: 'UpdatedAlbum', artist: 'UpdatedArtist', genere: 'UpdatedGenere'}]))}>Update Song</button> */}
+              </div>
+              {/* add new song */}
+                <form>
+                  <input name='songName' type='text' className='song-name' onChange={ (e) => {setLocalsongname(e.target.value)}}/>
+                  <input name='album' type='text' className='other-song-details' onChange={(e) => {setLocalsongalbum(e.target.value)}} />
+                  <input name='artist' type='text' className='other-song-details' onChange={(e) => {setLocalsongartist(e.target.value)}}/>
+                  <input name='genere' type='text' className='other-song-details' onChange={(e) => {setLocalsonggenere(e.target.value)}}/>
+                </form>
+                <button onClick={() => {
+                  dispatch({
+                    type: 'ADD_SONG_REQUESTED',
+                    payload: {
+                      title: localSongName,
+                      album: localSongAlbum,
+                      artist: localSongArtist,
+                      genere: localSongGenere}
+                    })
+                }}>Add Song</button>
             </SongsStyled>
-            {/* {
-                songs?.map((song: SongType) => (
-                    <>
-                        <input key={song.id} value={song.songName} />
-                        <input key={song.id} value={song.album} />\
-                        <input key={song.id} value={song.artist} />\
-                        <input key={song.id} value={song.genere} />\
-                    </>
-                ))
-            } */}
     </>
   )
 }

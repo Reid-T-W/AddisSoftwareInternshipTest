@@ -7,7 +7,9 @@ import { fetchSongsRequested,
          editSongSucceeded,
          editSongFailed,
          deleteSongSucceeded,
-         deleteSongFailed } from '../songs/songsSlice';
+         deleteSongFailed,
+         addSongSucceeded,
+         addSongFailed } from '../songs/songsSlice';
 
 const getSongs = () => {
   return axios.get<SongType[]>(`${process.env.REACT_APP_URL}/songs`)
@@ -26,6 +28,13 @@ const patchSong = (song: SongType) => {
 
 const deleteSong = (songId: number) => {
   return axios.delete<SongType[]>(`${process.env.REACT_APP_URL}/songs/${songId}`)
+  .then((response) => {
+    return response.data
+  })
+}
+
+const registerSong = (song: SongType) => {
+  return axios.post<SongType[]>(`${process.env.REACT_APP_URL}/songs`, song)
   .then((response) => {
     return response.data
   })
@@ -60,11 +69,22 @@ function* removeSong(action: any):Generator<Effect, void, any> {
   }
 }
 
+// worker saga: will be fired on ADD_SONG_REQUESTED actions
+function* addSong(action: any):Generator<Effect, void, any> {
+  try {
+    const response: SongType[] = yield call(registerSong, action.payload)
+    yield put(addSongSucceeded(response))
+  } catch (e: any) {
+    yield put(addSongFailed(e.message))
+  }
+}
+
 // watcher saga
 function* mySaga() {
   yield takeEvery('GET_SONGS_REQUESTED', fetchSongs)
   yield takeEvery('EDIT_SONG_REQUESTED', editSong)
   yield takeEvery('DELETE_SONG_REQUESTED', removeSong)
+  yield takeEvery('ADD_SONG_REQUESTED', addSong)
 }
 
 

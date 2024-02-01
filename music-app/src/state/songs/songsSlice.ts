@@ -48,6 +48,12 @@ const songsSlice = createSlice({
         },
         deleteSongFailed: (state, action) => {
             console.log("Failed to delete song")
+        },
+        addSongSucceeded: (state, action) => {
+            state.songs.unshift(action.payload)
+        },
+        addSongFailed: (state, action) => {
+            console.log("Failed to add song")
         }
     }
 })
@@ -60,5 +66,7 @@ export const { addSong,
                editSongSucceeded,
                editSongFailed,
                deleteSongSucceeded,
-               deleteSongFailed } = songsSlice.actions;
+               deleteSongFailed,
+               addSongSucceeded,
+               addSongFailed } = songsSlice.actions;
 export default songsSlice.reducer;
