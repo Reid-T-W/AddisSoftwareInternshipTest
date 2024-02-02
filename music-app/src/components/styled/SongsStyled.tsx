@@ -5,4 +5,5 @@ export const SongsStyled = styled.div`
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
 `

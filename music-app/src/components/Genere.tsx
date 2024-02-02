@@ -1,8 +1,15 @@
 import React from 'react'
+import { GenereStyled } from './styled/GenereStyled'
 
-const Genere = () => {
+interface GenereProps {
+  genere: string
+}
+
+const Genere: React.FC<GenereProps> = ({genere}) => {
   return (
-    <div>Genere</div>
+    <GenereStyled>
+      {genere}
+    </GenereStyled>
   )
 }
 

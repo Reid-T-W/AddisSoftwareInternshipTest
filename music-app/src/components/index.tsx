@@ -19,3 +19,7 @@ export {default as Song} from './Song';
 
 // Components used in Sidebar.tsx
 export {default as Geners} from './Geners'
+export { default as Stats } from './Stats'
+
+// Components used in Geners.tsx
+export {default as Genere} from './Genere'

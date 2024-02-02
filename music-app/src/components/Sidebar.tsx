@@ -1,21 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../App.css'
 import { Link } from "react-router-dom"
-import "@fontsource/poppins"; // Defaults to weight 400
+// import "@fontsource/poppins"; // Defaults to weight 400
 import { Geners } from './'
-import { SidebarStyled, SidebarStyledLink } from './styled/SidebarStyled';
+import { SidebarStyled, SidebarStyledLink, SidebarMenuStyled } from './styled/SidebarStyled';
+import { Box, Flex } from 'rebass'
+import { Stats } from './'
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../state/store"
+
 const Sidebar = () => {
   return (
     <SidebarStyled>
-      {/* <Link to="/" className='sidebar-text'>Home</Link> */}
-      {/* <Link to="/" className='sidebar-text'>Artists</Link> */}
-      {/* <Link to="/" className='sidebar-text'>Albums</Link> */}
-      <SidebarStyledLink href='/'>Home</SidebarStyledLink>
-      <SidebarStyledLink href='/'>Artists</SidebarStyledLink>
-      <SidebarStyledLink href='/'>Albums</SidebarStyledLink>
-      {/* <Link to="/">Artists</Link>
-      <Link to="/">Albums</Link> */}
-      <Geners />
+      <SidebarMenuStyled>
+        <SidebarStyledLink href='/'>Home</SidebarStyledLink>
+        <SidebarStyledLink href='/'>Artists</SidebarStyledLink>
+        <SidebarStyledLink href='/'>Albums</SidebarStyledLink>
+      </SidebarMenuStyled>
+      {/* <Geners /> */}
+      <Stats />
     </SidebarStyled>
   )
 }

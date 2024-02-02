@@ -1,12 +1,16 @@
 import React from 'react'
 import '../App.css'
 import { GenersStyled } from './styled/GenersStyled'
+import { Genere } from './'
 
 const Geners = () => {
+  const generes: string[] = ['genere1', 'genere2', 'genere3', 'genere4', 'genere5', 
+                             'genere1', 'genere2', 'genere3', 'genere4', 'genere5']
   return (
-    // <div className='geners sidebar-text'>
     <GenersStyled>
-      Geners
+      {generes.map((genere: string) => (
+        <Genere genere={genere}/>
+      ))}
     </GenersStyled>
 
   )

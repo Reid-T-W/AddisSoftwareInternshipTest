@@ -6,6 +6,8 @@ import { FiSave } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../state/store"
 import { fetchSongsFailed, setEditSong, } from '../state/songs/songsSlice';
+import { InputDisplayStyled } from './styled/InputDisplayStyled';
+import { ButtonLogoStyled } from './styled/ButtonLogoStyled';
 
 interface SongProps {
   songId: number;
@@ -36,15 +38,15 @@ const Song: React.FC<SongProps> =
     <>
       <div className="flex-table-row">
         <form>
-          <input name='songName' type='text' disabled={!editSong} className='song-name' value={localSongName} onChange={ (e) => {setLocalsongname(e.target.value)}}/>
-          <input name='album' type='text' disabled={!editSong} className='other-song-details' value={localSongAlbum} onChange={(e) => {setLocalsongalbum(e.target.value)}} />
-          <input name='artist' type='text' disabled={!editSong} className='other-song-details' value={localSongArtist} onChange={(e) => {setLocalsongartist(e.target.value)}}/>
-          <input name='genere' type='text' disabled={!editSong} className='other-song-details' value={localSongGenere} onChange={(e) => {setLocalsonggenere(e.target.value)}}/>
+          <InputDisplayStyled title={'true'} name='songName' type='text' disabled={!editSong} value={localSongName} onChange={ (e) => {setLocalsongname(e.target.value)}} />
+          <InputDisplayStyled name='album' type='text' disabled={!editSong} value={localSongAlbum} onChange={(e) => {setLocalsongalbum(e.target.value)}} />
+          <InputDisplayStyled name='artist' type='text' disabled={!editSong} value={localSongArtist} onChange={(e) => {setLocalsongartist(e.target.value)}}/>
+          <InputDisplayStyled name='genere' type='text' disabled={!editSong} value={localSongGenere} onChange={(e) => {setLocalsonggenere(e.target.value)}}/>
         </form>
 
         
         {
-          editSong?<button onClick={()=> 
+          editSong?<ButtonLogoStyled onClick={()=> 
               {
                 dispatch({
                           type: 'EDIT_SONG_REQUESTED',
@@ -58,22 +60,22 @@ const Song: React.FC<SongProps> =
                 dispatch(setEditSong(false))
               }
             } type='button'>
-            <FiSave size={22} style={{color: 'white'}} /> 
-          </button>:
-          <button onClick={()=>
+            <FiSave size={22} style={{color: 'orange'}} /> 
+          </ButtonLogoStyled>:
+          <ButtonLogoStyled onClick={()=>
               {
                 dispatch(setEditSong(true))
               }
             } type='button'>
-            <CiEdit size={22} style={{color: 'white'}}/>
-          </button>
+            <CiEdit size={22} style={{color: 'orange'}}/>
+          </ButtonLogoStyled>
         }
-        <button onClick={() => dispatch({
+        <ButtonLogoStyled onClick={() => dispatch({
                           type: 'DELETE_SONG_REQUESTED',
                           payload: songId
                           })} type='button'>
-          <MdDelete size={22} style={{color: 'white'}} />
-        </button>
+          <MdDelete size={22} style={{color: 'orange'}} />
+        </ButtonLogoStyled>
       </div>
     </>  
   )

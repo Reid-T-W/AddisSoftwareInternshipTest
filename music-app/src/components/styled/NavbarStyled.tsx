@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 export const NavbarStyled = styled.div`
-    background: #3898dd;
+    background: orange;
     display: flex;
     flex-direction: row;
     color: #FFF;
@@ -11,4 +11,5 @@ export const NavbarStyled = styled.div`
     font-weight: 600;
     line-height: normal;
     text-decoration: none;
+    height: 60px;
 `

@@ -26,3 +26,10 @@ export interface GenereType {
     noOfAlbums: number;
     noOfSongs: number;
 }
+
+export interface StatsType {
+    songsCount: number;
+    albumsCount: number;
+    artistsCount: number;
+    genersCount: number;
+}
