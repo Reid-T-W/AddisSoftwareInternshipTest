@@ -31,7 +31,7 @@ const createSong = async(req, res) => {
     try {
         // add doc to db
         const newSong = await Song.create({title, album, artist, genere})
-        const selectedFieldsSong = await Song.findById(newSong._id).select('title album artist genre');
+        const selectedFieldsSong = await Song.findById(newSong._id).select('title album artist genere');
         res.status(200).json(selectedFieldsSong)
     } catch(error) {
         res.status(400).json({error: error.message})
