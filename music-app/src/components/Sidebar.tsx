@@ -13,7 +13,7 @@ const Sidebar = () => {
   return (
     <SidebarStyled>
       <SidebarMenuStyled>
-        <SidebarStyledLink href='/'>Home</SidebarStyledLink>
+        <SidebarStyledLink href='/'>Songs</SidebarStyledLink>
         <SidebarStyledLink href='/artists'>Artists</SidebarStyledLink>
         <SidebarStyledLink href='/albums'>Albums</SidebarStyledLink>
         <SidebarStyledLink href='/generes'>Generes</SidebarStyledLink>
