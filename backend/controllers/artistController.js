@@ -9,36 +9,17 @@ const getArtists = async(req, res) => {
           $group: {
             _id: "$artist",
             songCount: { $sum: 1 },
-          },
+            albums: { $addToSet: "$album" },
+          }
         },
+        {
+          $sort: { "_id": 1 }
+        }
       ]);
 
     return res.status(200).json({"artistsWithSongCount": artistsWithSongCount})
 }
 
-const getArtistsAlbums = async (req, res) => {
-    
-    const artistsWithAlbumCount = Song.aggregate([
-        {
-          $group: {
-            _id: "$artist",
-            albums: { $addToSet: "$album" },
-            albumCount: { $sum: 1 } // Count the number of albums for each artist
-          }
-        },
-        // {
-        //   $project: {
-        //     artist: "$_id",
-        //     albums: 1,
-        //     albumCount: 1,
-        //     _id: 0
-        //   }
-        // }
-      ]);
-      return res.status(200).json({"artistsWithAlbumCount": artistsWithAlbumCount})
-}
-
 module.exports = {
-    getArtists,
-    getArtistsAlbums
+    getArtists
 }
