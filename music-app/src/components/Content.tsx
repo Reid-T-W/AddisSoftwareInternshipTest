@@ -1,17 +1,18 @@
 import React from 'react'
 import '../App.css'
-import { Songs, Sidebar } from './'
+import { Sidebar } from './'
 import { Flex } from 'rebass'
 
-const Content = () => {
+interface BodyProps {
+  Component: React.FC;
+}
+
+const Content:React.FC<BodyProps> = ({Component}) => {
   return (
-    // <div className='content-container'>
     <Flex>
         <Sidebar />
-        <Songs />
+        <Component />
     </Flex>
-    // </div>
-    
   )
 }
 
