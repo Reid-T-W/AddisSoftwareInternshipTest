@@ -19,7 +19,6 @@ const {
 
 const {
     getArtists,
-    getArtistsAlbums,
 } = require('../controllers/artistController')
 
 const router = express.Router()
@@ -58,9 +57,6 @@ router.get('/generes', getGeneres)
 // ROUTES RELATED TO ARTISTS
 // GET all artists along with their number of songs
 router.get('/artists', getArtists)
-
-// GET all artists along with their album count
-router.get('/artists/albums', getArtistsAlbums)
 
 
 module.exports = router
