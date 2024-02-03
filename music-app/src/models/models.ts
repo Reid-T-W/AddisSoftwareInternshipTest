@@ -14,6 +14,7 @@ export interface AlbumType {
 export interface ArtistType {
     _id: string;
     songCount: number;
+    albums: string[];
 }
 
 export interface GenereType {

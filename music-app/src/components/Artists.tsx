@@ -30,6 +30,7 @@ const Artists = () => {
           <Artist
             artistName={artist._id}
             songCount={artist.songCount} 
+            albumCount={artist.albums.length}
           />
         ))}
       </TableStyled>
