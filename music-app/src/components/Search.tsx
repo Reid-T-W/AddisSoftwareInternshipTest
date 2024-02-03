@@ -10,7 +10,7 @@ import { RootState } from "../state/store"
 
 const Search = () => {
 
-  const [selectedFilter, setSelectedFilter] = useState('genre')
+  const [selectedFilter, setSelectedFilter] = useState('genere')
   const [searchTerm, setSearchterm] = useState('')
   const [searchPayload, setSearchpayload] = useState({})
   const dispatch = useDispatch();
@@ -68,7 +68,7 @@ const Search = () => {
         id="filters" 
         form="filterform"
         onChange={(event) => setSelectedFilter(event.target.value)}>
-        <option value="genre">Genre</option>
+        <option value="genere">Genre</option>
         <option value="album">Album</option>
         <option value="artist">Artist</option>
         <option value="title">Title</option>
