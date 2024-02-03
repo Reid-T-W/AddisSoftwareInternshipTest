@@ -14,8 +14,9 @@ const Sidebar = () => {
     <SidebarStyled>
       <SidebarMenuStyled>
         <SidebarStyledLink href='/'>Home</SidebarStyledLink>
-        <SidebarStyledLink href='/'>Artists</SidebarStyledLink>
-        <SidebarStyledLink href='/'>Albums</SidebarStyledLink>
+        <SidebarStyledLink href='/artists'>Artists</SidebarStyledLink>
+        <SidebarStyledLink href='/albums'>Albums</SidebarStyledLink>
+        <SidebarStyledLink href='/generes'>Generes</SidebarStyledLink>
       </SidebarMenuStyled>
       {/* <Geners /> */}
       <Stats />
