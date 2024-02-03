@@ -9,7 +9,7 @@ interface BodyProps {
 
 const Content:React.FC<BodyProps> = ({Component}) => {
   return (
-    <Flex>
+    <Flex height={'100%'}>
         <Sidebar />
         <Component />
     </Flex>

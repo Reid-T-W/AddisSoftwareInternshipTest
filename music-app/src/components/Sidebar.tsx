@@ -16,7 +16,7 @@ const Sidebar = () => {
         <SidebarStyledLink href='/'>Songs</SidebarStyledLink>
         <SidebarStyledLink href='/artists'>Artists</SidebarStyledLink>
         <SidebarStyledLink href='/albums'>Albums</SidebarStyledLink>
-        <SidebarStyledLink href='/generes'>Generes</SidebarStyledLink>
+        <SidebarStyledLink href='/generes'>Genres</SidebarStyledLink>
       </SidebarMenuStyled>
       {/* <Geners /> */}
       <Stats />

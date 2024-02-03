@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { StatsStyled } from './styled/StatsStyled';
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../state/store"
+import { Text } from "rebass"
 
 const Stats = () => {
   const stats = useSelector((state: RootState) => state.songs.stats)
@@ -13,16 +14,16 @@ const Stats = () => {
   return (
     <StatsStyled>
         <div>
-            {stats.songsCount} Songs
+          <Text style={{ display: 'inline' }} color={'black'}>{stats.songsCount}</Text> Songs
         </div>
         <div>
-            {stats.albumsCount} Albums
+          <Text style={{ display: 'inline' }} color={'black'}>{stats.albumsCount}</Text> Albums
         </div>
         <div>
-            {stats.artistsCount} Artists
+          <Text style={{ display: 'inline' }} color={'black'}>{stats.artistsCount}</Text> Artists
         </div>
         <div>
-            {stats.genersCount} Geners
+          <Text style={{ display: 'inline' }} color={'black'}>{stats.genersCount}</Text> Genres
         </div>          
     </StatsStyled>
   )

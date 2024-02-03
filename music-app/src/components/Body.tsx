@@ -12,15 +12,10 @@ interface BodyProps {
 
 const Body:React.FC<BodyProps> = ({Component}) => {
   return (
-    <Flex flexDirection={'column'} backgroundColor={'#000'}>
+    <Flex flexDirection={'column'} backgroundColor={'#000'} height={'100vh'}>
         <Navbar />       
         <Content Component={Component}/>
-        <Footer />
     </Flex>
-
-    // </div>
-
-
   )
 }
 

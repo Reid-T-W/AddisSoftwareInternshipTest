@@ -6,7 +6,8 @@ import { TitleStyled } from './styled/TitleStyled';
 import { RootState } from "../state/store"
 import { TableStyled } from './styled/TableStyled';
 import { AlbumType } from '../models/models';
-import { Album } from './'
+import { Album, Footer } from './'
+import { Flex } from 'rebass'
 
 const Albums = () => {
 
@@ -18,24 +19,27 @@ const Albums = () => {
   }, [dispatch])
 
   return (
-    <SongsStyled>
-              
-      {/* title */}
-      <TitleStyled>
-        Albums
-      </TitleStyled>
-      
-      {/* list of albums */}
-      <TableStyled>
+    <Flex flexDirection={'column'} width={'100%'}>
+      <SongsStyled>
+                
+        {/* title */}
+        <TitleStyled>
+          Albums
+        </TitleStyled>
+        
+        {/* list of albums */}
+        <TableStyled>
 
-      {albums.map((album: AlbumType) => (
-        <Album
-          albumName={album._id}
-          songCount={album.songCount} 
-        />
-      ))}
-    </TableStyled>
-    </SongsStyled>
+        {albums.map((album: AlbumType) => (
+          <Album
+            albumName={album._id}
+            songCount={album.songCount} 
+          />
+        ))}
+      </TableStyled>
+      </SongsStyled>
+      <Footer />
+    </Flex>
   )
 }
 

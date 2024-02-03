@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { SongType } from '../models/models'
-import { Song } from './'
+import { Song, Footer } from './'
 import { SongsStyled } from './styled/SongsStyled'
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../state/store"
@@ -33,7 +33,7 @@ const Songs = () => {
   };
 
   return (
-    <>
+      <Flex flexDirection={'column'} width={'100%'}>
             <SongsStyled>
               
               {/* title */}
@@ -70,7 +70,7 @@ const Songs = () => {
                 
                 {/* add button */}
                 <Box marginLeft={'10px'}>
-                  <Button color={'black'} 
+                  <Button color={'white'} backgroundColor={"orange"} 
                     onClick={() => {dispatch({
                       type: 'ADD_SONG_REQUESTED',
                       payload: {
@@ -88,7 +88,8 @@ const Songs = () => {
                 </Box>
               </Flex>
             </SongsStyled>
-    </>
+            <Footer />
+        </Flex>
   )
 }
 

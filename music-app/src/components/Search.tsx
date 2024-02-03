@@ -7,6 +7,7 @@ import { SelectStyled } from './styled/SelectStyled';
 import { ButtonLogoStyled } from './styled/ButtonLogoStyled';
 import { useDispatch } from "react-redux";
 import { RootState } from "../state/store"
+import { useNavigate } from 'react-router-dom';
 
 const Search = () => {
 
@@ -14,6 +15,14 @@ const Search = () => {
   const [searchTerm, setSearchterm] = useState('')
   const [searchPayload, setSearchpayload] = useState({})
   const dispatch = useDispatch();
+
+  const navigate = useNavigate()
+
+  const navigateToSongs = () => {
+    return new Promise(resolve => {
+      resolve(navigate('/'));
+    });
+  }
 
   return (
     <>
@@ -28,36 +37,39 @@ const Search = () => {
                         }/>
       
       <ButtonLogoStyled 
-        onClick={()=>
+        onClick={async()=>
           {
-            switch(selectedFilter) {
-              case 'album':
-                dispatch({
-                  type: 'SEARCH_SONG_REQUESTED',
-                  payload: {album: searchTerm}
-                });
-                break;
-              case 'genere':
-                dispatch({
-                  type: 'SEARCH_SONG_REQUESTED',
-                  payload: {genere: searchTerm}
-                });
-                break;
-              case 'artist':
-                dispatch({
-                  type: 'SEARCH_SONG_REQUESTED',
-                  payload: {artist: searchTerm}
-                });
-                break;
-              case 'title':
-                dispatch({
-                  type: 'SEARCH_SONG_REQUESTED',
-                  payload: {title: searchTerm}
-                });
-                break;
-              default:
-                break;
-            }
+            await navigateToSongs()
+            .then(()=>{
+              switch(selectedFilter) {
+                case 'album':
+                  dispatch({
+                    type: 'SEARCH_SONG_REQUESTED',
+                    payload: {album: searchTerm}
+                  });
+                  break;
+                case 'genere':
+                  dispatch({
+                    type: 'SEARCH_SONG_REQUESTED',
+                    payload: {genere: searchTerm}
+                  });
+                  break;
+                case 'artist':
+                  dispatch({
+                    type: 'SEARCH_SONG_REQUESTED',
+                    payload: {artist: searchTerm}
+                  });
+                  break;
+                case 'title':
+                  dispatch({
+                    type: 'SEARCH_SONG_REQUESTED',
+                    payload: {title: searchTerm}
+                  });
+                  break;
+                default:
+                  break;
+              }
+            })
           }
           }>
         <FaSearch color='black' size={23}/>

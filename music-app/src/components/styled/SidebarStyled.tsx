@@ -2,9 +2,8 @@ import styled from '@emotion/styled'
 
 export const SidebarStyled = styled.div`
     width: 254px;
-    height: 629px;
+    height: 100%;
     flex-shrink: 0;
-    // background: #edb4b4;
     background: orange;
     display: flex;
     flex-direction: column;
