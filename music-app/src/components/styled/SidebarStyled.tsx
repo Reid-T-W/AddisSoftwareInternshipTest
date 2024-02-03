@@ -29,7 +29,7 @@ export const SidebarMenuStyled = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
     flex-grow: 0;
     flex-basis: 255px;
     margin-top: 30px;
