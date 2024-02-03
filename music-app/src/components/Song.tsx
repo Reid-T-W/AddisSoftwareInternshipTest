@@ -8,6 +8,7 @@ import { RootState } from "../state/store"
 import { fetchSongsFailed, setEditSong, } from '../state/songs/songsSlice';
 import { InputDisplayStyled } from './styled/InputDisplayStyled';
 import { ButtonLogoStyled } from './styled/ButtonLogoStyled';
+import { RowStyled } from './styled/RowStyled';
 
 interface SongProps {
   songId: number;
@@ -36,7 +37,7 @@ const Song: React.FC<SongProps> =
 
   return (
     <>
-      <div className="flex-table-row">
+      <RowStyled>
         <form>
           <InputDisplayStyled title={'true'} name='songName' type='text' disabled={!editSong} value={localSongName} onChange={ (e) => {setLocalsongname(e.target.value)}} />
           <InputDisplayStyled name='album' type='text' disabled={!editSong} value={localSongAlbum} onChange={(e) => {setLocalsongalbum(e.target.value)}} />
@@ -76,7 +77,7 @@ const Song: React.FC<SongProps> =
                           })} type='button'>
           <MdDelete size={22} style={{color: 'orange'}} />
         </ButtonLogoStyled>
-      </div>
+      </RowStyled>
     </>  
   )
 }
