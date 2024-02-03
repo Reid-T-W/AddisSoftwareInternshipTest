@@ -43,3 +43,24 @@ export const searchSongApiCall = (searchTerm: any) => {
         return response.data
     })
 }
+
+export const getAlbumsApiCall = () => {
+  return axios.get(`${process.env.REACT_APP_URL}/albums`)
+  .then((response) => {
+      return response.data.albumsWithSongCount
+  })
+}
+
+export const getArtistsApiCall = () => {
+  return axios.get(`${process.env.REACT_APP_URL}/artists`)
+  .then((response) => {
+      return response.data.artistsWithSongCount
+  })
+}
+
+export const getGeneresApiCall = () => {
+  return axios.get(`${process.env.REACT_APP_URL}/generes`)
+  .then((response) => {
+      return response.data.generesWithSongCount
+  })
+}

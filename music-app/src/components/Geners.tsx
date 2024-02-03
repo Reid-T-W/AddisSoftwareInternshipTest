@@ -1,17 +1,42 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import '../App.css'
 import { GenersStyled } from './styled/GenersStyled'
 import { Genere } from './'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from "../state/store"
+import { SongsStyled } from './styled/SongsStyled';
+import { TitleStyled } from './styled/TitleStyled';
+import { TableStyled } from './styled/TableStyled';
+import { GenereType } from '../models/models';
 
 const Geners = () => {
-  const generes: string[] = ['genere1', 'genere2', 'genere3', 'genere4', 'genere5', 
-                             'genere1', 'genere2', 'genere3', 'genere4', 'genere5']
+
+  const generes = useSelector((state: RootState) => state.generes.generes);
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch({type: 'GET_GENERES_REQUESTED'})
+  }, [dispatch])
+
   return (
-    <GenersStyled>
-      {generes.map((genere: string) => (
-        <Genere genere={genere}/>
+    <SongsStyled>
+              
+      {/* title */}
+      <TitleStyled>
+        Genres
+      </TitleStyled>
+      
+      {/* list of albums */}
+      <TableStyled>
+
+      {generes.map((genere: GenereType) => (
+        <Genere
+          genereName={genere._id}
+          songCount={genere.songCount} 
+        />
       ))}
-    </GenersStyled>
+    </TableStyled>
+    </SongsStyled>
 
   )
 }

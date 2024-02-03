@@ -1,6 +1,10 @@
 import axios from 'axios'
 import { Effect, call, put, takeEvery, takeLatest } from 'redux-saga/effects'
-import { SongType } from '../../models/models';
+import { SongType, 
+         AlbumType, 
+         ArtistType,
+         GenereType } from '../../models/models';
+
 import { fetchSongsRequested, 
          fetchSongsSucceeded, 
          fetchSongsFailed,
@@ -13,15 +17,63 @@ import { fetchSongsRequested,
          getStatsSucceeded,
          getStatsFailed,
          searchSongSucceeded,
-         searchSongFailed } from '../songs/songsSlice';
+         searchSongFailed,
+        } from '../songs/songsSlice';
+import {
+  fetchAlbumsSucceeded,
+  fetchAlbumsFailed
+} from '../albums/albumsSlice'
+
+import {
+  fetchArtistsSucceeded,
+  fetchArtistsFailed
+} from '../artists/artistsSlice'
+
+import {
+  fetchGeneresSucceeded,
+  fetchGeneresFailed
+} from '../geners/genersSlice'
 
 import { getSongsApiCall,
          patchSongApiCall,
          deleteSongApiCall,
          registerSongApiCall,
          getStatsApiCall,
-         searchSongApiCall
+         searchSongApiCall,
+         getAlbumsApiCall,
+         getArtistsApiCall,
+         getGeneresApiCall
  } from '../../utils/apiCalls'
+
+// worker saga: will be fired on GET_GENERES_REQUESTED actions
+function *getGeneres(action: any): Generator<Effect, void, any> {
+  try {
+    const generes: GenereType[] = yield call(getGeneresApiCall)
+    yield put(fetchGeneresSucceeded(generes))
+  } catch (e: any) {
+    yield put(fetchGeneresFailed(e.message))
+  }
+}
+
+// worker saga: will be fired on GET_ARTISTS_REQUESTED actions
+function *getArtists(action: any): Generator<Effect, void, any> {
+  try {
+    const artists: ArtistType[] = yield call(getArtistsApiCall)
+    yield put(fetchArtistsSucceeded(artists))
+  } catch (e: any) {
+    yield put(fetchArtistsFailed(e.message))
+  }
+}
+
+ // worker saga: will be fired on GET_ALBUMS_REQUESTED actions
+ function *getAlbums(action: any): Generator<Effect, void, any> {
+  try {
+    const albums: AlbumType[] = yield call(getAlbumsApiCall)
+    yield put(fetchAlbumsSucceeded(albums))
+  } catch (e: any) {
+    yield put(fetchAlbumsFailed(e.message))
+  }
+ }
 
  // worker saga: will be fired on SEARCH_SONG_REQUESTED actions
 function* searchSong(action: any): Generator<Effect, void, any> {
@@ -111,6 +163,15 @@ function* mySaga() {
 
   // handles actions related to stats state
   yield takeEvery('GET_STATS_REQUESTED', getStats)
+
+  // handles actions related to albums state
+  yield takeEvery('GET_ALBUMS_REQUESTED', getAlbums)
+
+  // handles actions related to artists state
+  yield takeEvery('GET_ARTISTS_REQUESTED', getArtists)
+
+  // handles actions related to generes state
+  yield takeEvery('GET_GENERES_REQUESTED', getGeneres)
 }
 
 

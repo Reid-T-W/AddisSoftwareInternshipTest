@@ -1,8 +1,22 @@
 import React from 'react'
+import { RowStyled } from './styled/RowStyled';
+import { InputDisplayStyled } from './styled/InputDisplayStyled';
 
-const Artist = () => {
+interface ArtistProps {
+  artistName: string;
+  songCount: number;
+}
+
+const Artist:React.FC<ArtistProps> = ({artistName, songCount}) => {
   return (
-    <div>Artist</div>
+    <>
+      <RowStyled>
+        <form>
+          <InputDisplayStyled title={'true'} name='artistName' type='text' disabled value={artistName}/>
+          <InputDisplayStyled name='songCount' type='text' disabled value={`${songCount} ${songCount===1?'song':'songs'}`}/>
+        </form>
+      </RowStyled>
+    </>
   )
 }
 
