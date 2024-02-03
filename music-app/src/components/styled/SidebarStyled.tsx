@@ -21,6 +21,8 @@ export const SidebarStyledLink = styled.a`
     font-weight: 600;
     line-height: normal;
     text-decoration: none;
+    &:hover {
+        opacity: 0.5;
 `
 
 export const SidebarMenuStyled = styled.div`

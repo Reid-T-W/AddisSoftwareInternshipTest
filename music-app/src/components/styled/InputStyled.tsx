@@ -2,9 +2,10 @@ import styled from "@emotion/styled";
 
 export const InputStyled = styled.input`
     background: none;
-    border: 1px solid bottom;
-    border-radius: 10%;
-    // color: #B2B2B2;
+    border-bottom: 1px solid orange;
+    border-top: none;
+    border-right: none;
+    border-radius: 5%;
     color: orange;
     font-family: Poppins;
     font-size: 15px;

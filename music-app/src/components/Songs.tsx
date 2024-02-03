@@ -70,7 +70,7 @@ const Songs = () => {
                 
                 {/* add button */}
                 <Box marginLeft={'10px'}>
-                  <Button color={'white'} backgroundColor={"orange"} 
+                  <Button css={{ ":hover": {opacity:'0.5'}}} color={'white'} backgroundColor={"orange"} 
                     onClick={() => {dispatch({
                       type: 'ADD_SONG_REQUESTED',
                       payload: {
