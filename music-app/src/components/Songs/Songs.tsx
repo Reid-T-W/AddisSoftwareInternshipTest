@@ -61,28 +61,29 @@ const Songs = () => {
                 {/* input form*/}
                 <Box>
                   <form>
-                    <InputStyled name='songName' type='text' placeholder='Name' onChange={ (e) => {setLocalsongname(e.target.value)}}/>
-                    <InputStyled name='album' type='text' placeholder='Album' onChange={(e) => {setLocalsongalbum(e.target.value)}} />
-                    <InputStyled name='artist' type='text' placeholder='Artist' onChange={(e) => {setLocalsongartist(e.target.value)}}/>
-                    <InputStyled name='genere' type='text' placeholder='Genere' onChange={(e) => {setLocalsonggenere(e.target.value)}}/>
+                    <InputStyled name='songName' type='text' placeholder='Name' value={localSongName} onChange={ (e) => {setLocalsongname(e.target.value)}}/>
+                    <InputStyled name='album' type='text' placeholder='Album' value={localSongAlbum} onChange={(e) => {setLocalsongalbum(e.target.value)}} />
+                    <InputStyled name='artist' type='text' placeholder='Artist' value={localSongArtist} onChange={(e) => {setLocalsongartist(e.target.value)}}/>
+                    <InputStyled name='genere' type='text' placeholder='Genere' value={localSongGenere} onChange={(e) => {setLocalsonggenere(e.target.value)}}/>
                   </form>
                 </Box>
                 
                 {/* add button */}
                 <Box marginLeft={'10px'}>
                   <Button css={{ ":hover": {opacity:'0.5'}}} color={'white'} backgroundColor={"orange"} 
-                    onClick={() => {dispatch({
+                    onClick={() => {
+                      dispatch({
                       type: 'ADD_SONG_REQUESTED',
                       payload: {
                         title: localSongName,
                         album: localSongAlbum,
                         artist: localSongArtist,
                         genere: localSongGenere}
-                      })
-                      setLocalsongname("")
-                      setLocalsongalbum("")
-                      setLocalsongartist("")
-                      setLocalsonggenere("")
+                      });
+                      setLocalsongname('')
+                      setLocalsongalbum('')
+                      setLocalsongartist('')
+                      setLocalsonggenere('')
                       scrollToTop()
                   }}>Add Song</Button>
                 </Box>

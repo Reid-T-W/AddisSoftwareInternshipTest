@@ -12,7 +12,6 @@ const Search = () => {
 
   const [selectedFilter, setSelectedFilter] = useState('genere')
   const [searchTerm, setSearchterm] = useState('')
-  const [searchPayload, setSearchpayload] = useState({})
   const dispatch = useDispatch();
 
   const navigate = useNavigate()
@@ -30,6 +29,7 @@ const Search = () => {
       <InputSearchStyled name='genere' type='text' 
                          placeholder={selectedFilter} 
                          className='other-song-details'
+                         value={searchTerm}
                          onChange={(event) => {
                           setSearchterm(event.target.value)
                          }
@@ -69,6 +69,7 @@ const Search = () => {
                   break;
               }
             })
+            setSearchterm('')
           }
           }>
         <FaSearch color='black' size={23}/>
