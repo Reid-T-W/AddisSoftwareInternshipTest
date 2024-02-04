@@ -1,5 +1,6 @@
 import { GenereType } from '../../models/models'
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from 'react-toastify';
 
 interface GeneresState {
     generes: GenereType[]
@@ -18,7 +19,7 @@ const generesSlice = createSlice({
             state.generes = action.payload
         },
         fetchGeneresFailed: (state, action) => {
-            console.log("Failed to fetch generes", action.payload)
+            toast.error(`Failed to fetch genres, ${action.payload}`)
         }
     }
 })

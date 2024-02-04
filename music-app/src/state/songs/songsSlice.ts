@@ -1,5 +1,6 @@
 import { SongType, StatsType } from '../../models/models';
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 interface SongsState {
     songs: SongType[];
@@ -29,7 +30,7 @@ const songsSlice = createSlice({
             state.songs = action.payload;
         },
         fetchSongsFailed: (state, action) => {
-            console.log("Failed to fetch songs: ", action.payload);
+            toast.error(`Failed to fetch songs, ${action.payload}`)
         },
         editSongSucceeded: (state, action) => {
             const songs = state.songs;
@@ -37,23 +38,26 @@ const songsSlice = createSlice({
                 song._id === action.payload._id ? action.payload : song
             );
             state.songs = songs;
+            toast.success(`Song updated successfully`)
         },
         editSongFailed: (state, action) => {
-            console.log("Failed to update song");
+            toast.error(`Failed to update song, ${action.payload}`)
         },
         deleteSongSucceeded: (state, action) => {
             const songIdToRemove = action.payload._id;
             const songs = state.songs.filter(song => song._id !== songIdToRemove);
             state.songs = songs;
+            toast.success(`Song deleted successfully`)
         },
         deleteSongFailed: (state, action) => {
-            console.log("Failed to delete song");
+            toast.error(`Failed to delete song, ${action.payload}`)
         },
         addSongSucceeded: (state, action) => {
             state.songs.unshift(action.payload);
+            toast.success("Song added successfully")
         },
         addSongFailed: (state, action) => {
-            console.log("Failed to add song");
+            toast.error(`Failed to add song ${action.payload}`)
         },
 
         // function related to the editSong state
@@ -66,13 +70,20 @@ const songsSlice = createSlice({
             state.stats = action.payload;
         },
         getStatsFailed: (state, action) => {
-            console.log("Falied to get the stats");
+            toast.error(`Failed to fetch stats, ${action.payload}`)
         },
         searchSongSucceeded: (state, action) => {
             state.songs = action.payload;
+            if (state.songs.length !== 0) {
+                toast.success(`Search results retrieved successfully`)
+            } else {
+                toast.info(`No items found, please ensure the spelling 
+                            is correct and that the correct filter is 
+                            selected`)
+            }
         },
         searchSongFailed: (state, action) => {
-            console.log("Failed to search song")
+            toast.error(`Failed to search, ${action.payload}`)
         }
     }
 })

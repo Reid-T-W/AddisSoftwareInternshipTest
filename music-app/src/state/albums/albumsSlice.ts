@@ -1,5 +1,6 @@
 import { AlbumType } from '../../models/models'
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from 'react-toastify';
 
 interface AlbumState {
     albums: AlbumType[]
@@ -19,7 +20,7 @@ const albumsSlice = createSlice({
             state.albums = action.payload;
         },
         fetchAlbumsFailed: (state, action) => {
-            console.log("Failed to fetch albums: ", action.payload);
+            toast.error(`Failed to fetch albums, ${action.payload}`)
         }
         }
     })

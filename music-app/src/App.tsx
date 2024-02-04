@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import { Body, 
          Navbar, 
          Sidebar, 
@@ -15,6 +17,8 @@ import * as ROUTES from "../src/constants/routes"
 function App() {
   return (
     <div>
+      <ToastContainer
+        closeOnClick/>
       <BrowserRouter>
         <Routes>
           <Route path={ROUTES.SONGS} element={<Body Component={Songs}/>} />

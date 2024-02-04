@@ -1,5 +1,6 @@
 import { ArtistType} from '../../models/models'
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
     
 interface ArtistsState {
     artists: ArtistType[]
@@ -18,7 +19,7 @@ const artistsSlice = createSlice({
             state.artists = action.payload;
         },
         fetchArtistsFailed: (state, action) => {
-            console.log("Failed to fetch artists: ", action.payload);
+            toast.error(`Failed to fetch artists, ${action.payload}`)
         }  
     }
 })
