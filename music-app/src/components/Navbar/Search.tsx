@@ -22,6 +22,47 @@ const Search = () => {
     });
   }
 
+  const search = () => {
+    navigateToSongs()
+    .then(()=>{
+      switch(selectedFilter) {
+        case 'album':
+          dispatch({
+            type: 'SEARCH_SONG_REQUESTED',
+            payload: {album: searchTerm}
+          });
+          break;
+        case 'genere':
+          dispatch({
+            type: 'SEARCH_SONG_REQUESTED',
+            payload: {genere: searchTerm}
+          });
+          break;
+        case 'artist':
+          dispatch({
+            type: 'SEARCH_SONG_REQUESTED',
+            payload: {artist: searchTerm}
+          });
+          break;
+        case 'title':
+          dispatch({
+            type: 'SEARCH_SONG_REQUESTED',
+            payload: {title: searchTerm}
+          });
+          break;
+        default:
+          break;
+      }
+    })
+    setSearchterm('')
+  }
+
+  const handleKeyDown = (event: any) => {
+    if (event.key === 'Enter') {
+      search();
+    }
+  };
+
   return (
     <>
     <SearchStyled>
@@ -32,46 +73,12 @@ const Search = () => {
                          value={searchTerm}
                          onChange={(event) => {
                           setSearchterm(event.target.value)
-                         }
-                        }/>
+                         }}
+                         onKeyDown={handleKeyDown}
+                        />
       
       <ButtonLogoStyled 
-        onClick={async()=>
-          {
-            await navigateToSongs()
-            .then(()=>{
-              switch(selectedFilter) {
-                case 'album':
-                  dispatch({
-                    type: 'SEARCH_SONG_REQUESTED',
-                    payload: {album: searchTerm}
-                  });
-                  break;
-                case 'genere':
-                  dispatch({
-                    type: 'SEARCH_SONG_REQUESTED',
-                    payload: {genere: searchTerm}
-                  });
-                  break;
-                case 'artist':
-                  dispatch({
-                    type: 'SEARCH_SONG_REQUESTED',
-                    payload: {artist: searchTerm}
-                  });
-                  break;
-                case 'title':
-                  dispatch({
-                    type: 'SEARCH_SONG_REQUESTED',
-                    payload: {title: searchTerm}
-                  });
-                  break;
-                default:
-                  break;
-              }
-            })
-            setSearchterm('')
-          }
-          }>
+        onClick={(e) => search() }>
         <FaSearch color='black' size={23}/>
       </ButtonLogoStyled>
       
