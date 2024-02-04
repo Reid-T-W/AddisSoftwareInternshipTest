@@ -10,16 +10,17 @@ import { Body,
          Artists, 
          Geners } from './components'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import * as ROUTES from "../src/constants/routes"
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Body Component={Songs}/>} />
-          <Route path="/albums" element={<Body Component={Albums}/>} />
-          <Route path="/artists" element={<Body Component={Artists}/>} />
-          <Route path="/generes" element={<Body Component={Geners}/>} />
+          <Route path={ROUTES.SONGS} element={<Body Component={Songs}/>} />
+          <Route path={ROUTES.ALBUMS} element={<Body Component={Albums}/>} />
+          <Route path={ROUTES.ARTISTS} element={<Body Component={Artists}/>} />
+          <Route path={ROUTES.GENRES} element={<Body Component={Geners}/>} />
         </Routes>
         </BrowserRouter>
     </div>

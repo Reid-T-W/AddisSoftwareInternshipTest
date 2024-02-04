@@ -7,15 +7,16 @@ import { Box, Flex } from 'rebass'
 import { Stats } from '..'
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../state/store"
+import * as ROUTES from "../../constants/routes"
 
 const Sidebar = () => {
   return (
     <SidebarStyled>
       <SidebarMenuStyled>
-        <SidebarStyledLink href='/'>Songs</SidebarStyledLink>
-        <SidebarStyledLink href='/artists'>Artists</SidebarStyledLink>
-        <SidebarStyledLink href='/albums'>Albums</SidebarStyledLink>
-        <SidebarStyledLink href='/generes'>Genres</SidebarStyledLink>
+        <SidebarStyledLink href={ROUTES.SONGS}>Songs</SidebarStyledLink>
+        <SidebarStyledLink href={ROUTES.ARTISTS}>Artists</SidebarStyledLink>
+        <SidebarStyledLink href={ROUTES.ALBUMS}>Albums</SidebarStyledLink>
+        <SidebarStyledLink href={ROUTES.GENRES}>Genres</SidebarStyledLink>
       </SidebarMenuStyled>
       {/* <Geners /> */}
       <Stats />
