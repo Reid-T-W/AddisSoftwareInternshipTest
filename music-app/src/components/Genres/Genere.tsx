@@ -1,7 +1,7 @@
 import React from 'react'
-import { GenereStyled } from './styled/GenereStyled'
-import { RowStyled } from './styled/RowStyled';
-import { InputDisplayStyled } from './styled/InputDisplayStyled';
+import { GenereStyled } from '../styled/GenereStyled'
+import { RowStyled } from '../styled/RowStyled';
+import { InputDisplayStyled } from '../styled/InputDisplayStyled';
 
 interface GenereProps {
   genereName: string;

@@ -1,8 +1,7 @@
 import React from 'react'
-import { Search } from './'
-import '../App.css'
-import { NavbarStyled } from './styled/NavbarStyled'
-import { LogoStyled } from './styled/LogoStyled'
+import { Search } from '..'
+import { NavbarStyled } from '../styled/NavbarStyled'
+import { LogoStyled } from '../styled/LogoStyled'
 
 
 const Navbar = () => {

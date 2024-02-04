@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { Box } from 'rebass'
-import { SongsStyled } from './styled/SongsStyled';
-import { TitleStyled } from './styled/TitleStyled';
-import { RootState } from "../state/store"
-import { TableStyled } from './styled/TableStyled';
-import { ArtistType } from '../models/models';
-import { Artist, Footer } from './';
+import { SongsStyled } from '../styled/SongsStyled';
+import { TitleStyled } from '../styled/TitleStyled';
+import { RootState } from "../../state/store"
+import { TableStyled } from '../styled/TableStyled';
+import { ArtistType } from '../../models/models';
+import { Artist, Footer } from '..';
 import { Flex } from 'rebass'
 
 const Artists = () => {

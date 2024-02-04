@@ -1,33 +1,33 @@
 // Components used in App.tsx
 export { default as Body } from './Body';
-export {default as Geners} from './Geners'
-export { default as Albums } from './Albums';
-export { default as Artists } from './Artists'
+export {default as Geners} from './Genres/Geners'
+export { default as Albums } from './Albums/Albums';
+export { default as Artists } from './Artists/Artists'
 
 // Components used in Body.tsx
-export { default as Navbar } from './Navbar';
+export { default as Navbar } from './Navbar/Navbar';
 export { default as Footer } from './Footer';
 export { default as Content } from './Content'
 
 // Components used in Content.tsx
-export { default as Sidebar } from './Sidebar';
-export { default as Songs } from './Songs';
+export { default as Sidebar } from './Sidebar/Sidebar';
+export { default as Songs } from './Songs/Songs';
 
 // Components used in Navbar
-export {default as Search} from './Search';
+export {default as Search} from './Navbar/Search';
 
 // Component using in Songs.tsx
-export {default as Song} from './Song';
+export {default as Song} from './Songs/Song';
 
 // Components used in Sidebar.tsx
-export { default as Stats } from './Stats'
+export { default as Stats } from './Sidebar/Stats'
 
 // Components used in Geners.tsx
-export {default as Genere} from './Genere'
+export {default as Genere} from './Genres/Genere'
 
 // Components used in Albums.tsx
-export {default as Album} from './Album'
+export {default as Album} from './Albums/Album'
 
 // Components used in Artists.tsx
-export {default as Artist} from './Artist'
+export {default as Artist} from './Artists/Artist'
 

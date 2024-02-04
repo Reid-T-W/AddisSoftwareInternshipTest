@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
-import '../App.css'
-import { SearchStyled } from './styled/SearchStyled'
+import { SearchStyled } from '../styled/SearchStyled'
 import { FaSearch } from "react-icons/fa";
-import { InputSearchStyled } from './styled/InputSearchStyled';
-import { SelectStyled } from './styled/SelectStyled';
-import { ButtonLogoStyled } from './styled/ButtonLogoStyled';
+import { InputSearchStyled } from '../styled/InputSearchStyled';
+import { SelectStyled } from '../styled/SelectStyled';
+import { ButtonLogoStyled } from '../styled/ButtonLogoStyled';
 import { useDispatch } from "react-redux";
-import { RootState } from "../state/store"
+import { RootState } from "../../state/store"
 import { useNavigate } from 'react-router-dom';
 
 const Search = () => {

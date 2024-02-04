@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import { StatsStyled } from './styled/StatsStyled';
+import { StatsStyled } from '../styled/StatsStyled';
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../state/store"
+import { RootState } from "../../state/store"
 import { Text } from "rebass"
 
 const Stats = () => {

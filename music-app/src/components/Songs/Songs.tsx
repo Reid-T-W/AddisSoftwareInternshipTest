@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { SongType } from '../models/models'
-import { Song, Footer } from './'
-import { SongsStyled } from './styled/SongsStyled'
+import { SongType } from '../../models/models'
+import { Song, Footer } from '..'
+import { SongsStyled } from '../styled/SongsStyled'
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../state/store"
+import { RootState } from "../../state/store"
 import { Button, Flex, Box } from 'rebass'
-import { InputStyled } from './styled/InputStyled';
-import { TitleStyled } from './styled/TitleStyled';
-import { TableStyled } from './styled/TableStyled';
+import { InputStyled } from '../styled/InputStyled';
+import { TitleStyled } from '../styled/TitleStyled';
+import { TableStyled } from '../styled/TableStyled';
 
 const Songs = () => {
   const [localSongName, setLocalsongname] = useState("")

@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
-import "../App.css"
 import { CiEdit } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
 import { FiSave } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../state/store"
-import { fetchSongsFailed, setEditSong, } from '../state/songs/songsSlice';
-import { InputDisplayStyled } from './styled/InputDisplayStyled';
-import { ButtonLogoStyled } from './styled/ButtonLogoStyled';
-import { RowStyled } from './styled/RowStyled';
+import { RootState } from "../../state/store"
+import { fetchSongsFailed, setEditSong, } from '../../state/songs/songsSlice';
+import { InputDisplayStyled } from '../styled/InputDisplayStyled';
+import { ButtonLogoStyled } from '../styled/ButtonLogoStyled';
+import { RowStyled } from '../styled/RowStyled';
 
 interface SongProps {
   songId: number;

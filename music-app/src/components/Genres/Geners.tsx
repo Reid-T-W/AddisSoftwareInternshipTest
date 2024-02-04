@@ -1,13 +1,12 @@
 import React, {useEffect} from 'react'
-import '../App.css'
-import { GenersStyled } from './styled/GenersStyled'
-import { Genere, Footer } from './'
+import { GenersStyled } from '../styled/GenersStyled'
+import { Genere, Footer } from '..'
 import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from "../state/store"
-import { SongsStyled } from './styled/SongsStyled';
-import { TitleStyled } from './styled/TitleStyled';
-import { TableStyled } from './styled/TableStyled';
-import { GenereType } from '../models/models';
+import { RootState } from "../../state/store"
+import { SongsStyled } from '../styled/SongsStyled';
+import { TitleStyled } from '../styled/TitleStyled';
+import { TableStyled } from '../styled/TableStyled';
+import { GenereType } from '../../models/models';
 import { Flex } from 'rebass'
 
 const Geners = () => {

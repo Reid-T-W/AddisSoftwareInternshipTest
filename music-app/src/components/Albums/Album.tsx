@@ -1,6 +1,6 @@
 import React from 'react'
-import { RowStyled } from './styled/RowStyled';
-import { InputDisplayStyled } from './styled/InputDisplayStyled';
+import { RowStyled } from '../styled/RowStyled';
+import { InputDisplayStyled } from '../styled/InputDisplayStyled';
 
 interface AlbumProps {
   albumName: string;

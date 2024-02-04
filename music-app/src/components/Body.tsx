@@ -1,7 +1,6 @@
 import React from 'react'
 import { Navbar, Footer, Content } from './'
 import { SongType } from '../models/models'
-import '../App.css'
 import {
   Flex,
 } from "rebass"
