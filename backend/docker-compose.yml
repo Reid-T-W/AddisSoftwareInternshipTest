@@ -12,4 +12,4 @@ services:
       - MONGO_URI=${MONGO_URI}
     command: npm start
     ports:
-      - "4000:4000"
+      - ${PORT}:${PORT}
