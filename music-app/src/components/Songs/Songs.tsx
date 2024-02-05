@@ -19,7 +19,19 @@ interface validationErrorsType {
   genre?: string
 }
 
-const Songs = () => {
+/**
+ * Songs Component - Dispatches an action to get a list
+ * of songs and renders them using the Song Component. 
+ * 
+ * @component
+ * 
+ * @returns {JSX.Element} The rendered component
+ */
+
+export const Songs = () => {
+
+  // Local states to be used in this component only
+  // Used when adding a new song
   const [localSongName, setLocalsongname] = useState("")
   const [localSongAlbum, setLocalsongalbum] = useState("")
   const [localSongArtist, setLocalsongartist] = useState("")
@@ -28,23 +40,29 @@ const Songs = () => {
   const songs = useSelector((state: RootState) => state.songs.songs)
   const dispatch = useDispatch();
 
+  // State that will be used during input validation, stores
+  // errors found during input validation
   const [errors, setErrors] = useState<validationErrorsType>({})
+
   let validationErrors:validationErrorsType = {}
 
+  // Dispatches an action to get list of songs
   useEffect(()=>{
     dispatch({type: 'GET_SONGS_REQUESTED'})
   }, [dispatch])
 
-  // ref to be used to scroll to top of table
+  // Ref to be used to scroll to top of table
   const tableRef: any = useRef(null);
 
-  // funtion to scroll to top
+  // Funtion to scroll to top
   const scrollToTop = () => {
     if (tableRef.current) {
       tableRef.current.scrollTop = 0;
     }
   };
 
+  // Function to validate form (verfies that input fields 
+  // are not empty)
   const validateForm = () => {
     if (!localSongName.trim()) {
       validationErrors.title = "title is required"
@@ -61,13 +79,16 @@ const Songs = () => {
     setErrors(validationErrors);
   }
 
+  // Function to add new song, dispatches an action
+  // with a payload containing the details of the new 
+  // song to be added 
   const addSong = () => {
      // Check if the form is valid
      // This function populates the validationErrors
      // dict incase errors are found
      validateForm()
      if (Object.keys(validationErrors).length === 0) {
-      // Valid form
+      // Form is valid, dispatch the action
       dispatch({
         type: 'ADD_SONG_REQUESTED',
         payload: {

@@ -9,7 +9,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../state/store"
 import * as ROUTES from "../../constants/routes"
 
-const Sidebar = () => {
+/**
+ * Sidebar Component, displays the sidebar menu 
+ * and also renders the Stats component
+ * 
+ * @component
+ * 
+ * @returns {JSX.Element} The rendered component
+ */
+export const Sidebar = () => {
   return (
     <SidebarStyled>
       <SidebarMenuStyled>
@@ -18,7 +26,6 @@ const Sidebar = () => {
         <SidebarStyledLink href={ROUTES.ALBUMS}>Albums</SidebarStyledLink>
         <SidebarStyledLink href={ROUTES.GENRES}>Genres</SidebarStyledLink>
       </SidebarMenuStyled>
-      {/* <Geners /> */}
       <Stats />
     </SidebarStyled>
   )

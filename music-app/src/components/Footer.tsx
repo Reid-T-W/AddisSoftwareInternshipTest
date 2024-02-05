@@ -1,9 +1,15 @@
 import React from 'react'
 import { FooterStyled } from './styled/FooterStyled'
 
-const Footer = () => {
+/**
+ * Footer Component, contains footer contents
+ * 
+ * @component
+ * 
+ * @returns {JSX.Element} The rendered component
+ */
+export const Footer = () => {
   return (
-    // <div className="footer">Footer</div>
     <FooterStyled>
       <p>&copy; 2024 music-app. All rights reserved.</p>
     </FooterStyled>

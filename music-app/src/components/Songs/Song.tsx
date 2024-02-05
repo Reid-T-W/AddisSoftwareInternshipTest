@@ -9,6 +9,11 @@ import { InputDisplayStyled } from '../styled/InputDisplayStyled';
 import { ButtonLogoStyled } from '../styled/ButtonLogoStyled';
 import { RowStyled } from '../styled/RowStyled';
 
+/**
+ * Props for the Song component.
+ * 
+ * @interface
+ */
 interface SongProps {
   songId: number;
   songName: string;
@@ -17,6 +22,17 @@ interface SongProps {
   songGenere: string;
 }
 
+/**
+ * Song Component, renders the details of a single song
+ * 
+ * @component
+ * 
+ * @prop {SongProps} props- The properties for the Song component,
+ * includes the songId, songName, songAlbum, songArtist, and 
+ * songGenre
+ *  
+ * @returns {JSX.Element} The rendered component
+ */
 const Song: React.FC<SongProps> = 
               ({
                 songId,
@@ -28,6 +44,8 @@ const Song: React.FC<SongProps> =
   const editSong = useSelector((state: RootState) => state.songs.editSong)
   const dispatch = useDispatch();
 
+  // Local states to be used in this component only
+  // used when updating a song
   const [localSongName, setLocalsongname] = useState(songName)
   const [localSongAlbum, setLocalsongalbum] = useState(songAlbum)
   const [localSongArtist, setLocalsongartist] = useState(songArtist)
