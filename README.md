@@ -75,7 +75,7 @@ npm start
 
 ### Backend
 - ExpressJS  
-- MongoDB
+- MongoDB (MongoDB Atlas)
 - Mongoose  
 - Docker   
 [Back to Top](#table-of-contents) 
