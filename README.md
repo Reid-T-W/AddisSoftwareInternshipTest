@@ -12,7 +12,8 @@
 
 ## Introduction  
 An app that is built for the Addis Software internship test. It can help view a list of saved songs. It also supports adding, updating, and deletion of a song. Moreover it also displays stats of songs, albums, artists and genres. Searching by
-different filters is also supported.
+different filters is also supported.  
+[Back to Top](#table-of-contents) 
 ## Implemented Features  
 - [x] View list of songs
 - [x] Add a new song  
@@ -23,11 +24,12 @@ different filters is also supported.
 - [x] View how many songs each album has
 - [x] View how many songs each genre has
 - [x] Search using different filters, search via title, genre, album, and artist  
+[Back to Top](#table-of-contents) 
 
-## Deployments
-[Back to Top](#table-of-contents)  
+## Deployments   
 Frontend is deployed on vercel [Deployment link](https://addis-software-internship-test.vercel.app/)  
 Backend is deployed on render [Deployment link](https://addissoftwareinternshiptest-reid-t-w.onrender.com/api/v1)  
+[Back to Top](#table-of-contents) 
 
 ## Running Backend locally  
 ### Using docker
@@ -42,7 +44,8 @@ cd into the backend directory
 run docker compose up  
 ```bash
     docker compose up  
-```
+```  
+[Back to Top](#table-of-contents) 
 
 ## Running the Frontend locally
 Clone the repo  
@@ -60,22 +63,26 @@ npm install
 Run  
 ```bash
 npm start
-```
+```  
+[Back to Top](#table-of-contents) 
 ## Tech Stack
 ### Frontend
 - ReactJS
 - Redux Toolkit  
 - Typescript  
 - Redux-Saga  
-- Emotion and Styled systems  
+- Emotion and Styled systems   
 
 ### Backend
 - ExpressJS  
 - MongoDB
 - Mongoose  
-- Docker  
+- Docker   
+[Back to Top](#table-of-contents) 
 ## Authors  
-Rediet Tadesse [Linkedin](https://www.linkedin.com/in/rediet-tadesse-43209013b/)  
+Rediet Tadesse [Linkedin](https://www.linkedin.com/in/rediet-tadesse-43209013b/)   
+[Back to Top](#table-of-contents) 
 
 ## Licensing  
 Licensed under the Apache License 2.0  
+[Back to Top](#table-of-contents) 
