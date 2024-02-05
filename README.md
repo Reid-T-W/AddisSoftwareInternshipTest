@@ -13,6 +13,9 @@
 An app that is built for the Addis Software internship test. It can help view a list of saved songs. It also supports adding, updating, and deletion of a song. Moreover it also displays stats of songs, albums, artists and genres. Searching by
 different filters is also supported.  
 [Back to Top](#table-of-contents) 
+
+## Demo Video  
+[![Demo video for music-app]()]()
 ## Implemented Features  
 - [x] View list of songs
 - [x] Add a new song  
