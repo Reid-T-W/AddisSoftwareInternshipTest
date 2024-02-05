@@ -15,7 +15,7 @@ different filters is also supported.
 [Back to Top](#table-of-contents) 
 
 ## Demo Video  
-[![Demo video for music-app]()]()
+[![Demo video for music-app](https://github.com/Reid-T-W/AddisSoftwareInternshipTest/blob/master/music-app-demo-video-thumbnail.png)](https://www.loom.com/share/f2f982cd6c3d4f8680543178346e0703?sid=431f4b88-ecba-4abc-ae14-206492b9d92e)  
 ## Implemented Features  
 - [x] View list of songs
 - [x] Add a new song  
