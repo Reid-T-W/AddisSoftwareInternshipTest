@@ -9,6 +9,14 @@ import { TableStyled } from '../styled/TableStyled';
 import { GenereType } from '../../models/models';
 import { Flex } from 'rebass'
 
+/**
+ * Geners Component - Dispatches an action to get a list
+ * of geners and renders them using the Genere Component. 
+ * 
+ * @component
+ * 
+ * @returns {JSX.Element} The rendered component
+ */
 const Geners = () => {
 
   const generes = useSelector((state: RootState) => state.generes.generes);
@@ -27,7 +35,7 @@ const Geners = () => {
           Genres
         </TitleStyled>
         
-        {/* list of albums */}
+        {/* list of genres */}
         <TableStyled>
 
         {generes.map((genere: GenereType) => (

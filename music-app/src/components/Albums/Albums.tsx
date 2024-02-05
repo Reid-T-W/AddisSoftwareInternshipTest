@@ -9,6 +9,14 @@ import { AlbumType } from '../../models/models';
 import { Album, Footer } from '..'
 import { Flex } from 'rebass'
 
+/**
+ * Albums Component - Dispatches an action to get a list
+ * of albums and renders them using the Album Component. 
+ * 
+ * @component
+ * 
+ * @returns {JSX.Element} The rendered component
+ */
 const Albums = () => {
 
   const albums = useSelector((state: RootState) => state.albums.albums)

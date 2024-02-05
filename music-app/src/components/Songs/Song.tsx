@@ -62,9 +62,11 @@ const Song: React.FC<SongProps> =
           <InputDisplayStyled name='genere' type='text' disabled={!editSong} value={localSongGenere} onChange={(e) => {setLocalsonggenere(e.target.value)}}/>
         </form>
 
-        
-        {
-          editSong?<ButtonLogoStyled onClick={()=> 
+        {/*Edit and Save song buttons, they are rendered based 
+        on the editSong state, if song is in edit mode a Save
+        button is rendered, which upon click dispatches an edit
+        action along with the edited data.*/}
+        {editSong?<ButtonLogoStyled onClick={()=> 
               {
                 dispatch({
                           type: 'EDIT_SONG_REQUESTED',
@@ -88,6 +90,7 @@ const Song: React.FC<SongProps> =
             <CiEdit size={22} style={{color: 'orange'}}/>
           </ButtonLogoStyled>
         }
+        {/*Delete song button*/}
         <ButtonLogoStyled onClick={() => dispatch({
                           type: 'DELETE_SONG_REQUESTED',
                           payload: songId

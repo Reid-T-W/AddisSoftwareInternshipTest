@@ -2,12 +2,28 @@ import React from 'react'
 import { RowStyled } from '../styled/RowStyled';
 import { InputDisplayStyled } from '../styled/InputDisplayStyled';
 
+/**
+ * Props for the Artist component.
+ * 
+ * @interface
+ */
 interface ArtistProps {
   artistName: string;
   songCount: number;
   albumCount: number;
 }
 
+/**
+ * Artist Component, renders the details of a single artist
+ * 
+ * @component
+ * 
+ * @prop {ArtistProps} props- The properties for the Artist component,
+ * includes the artistName, albumCount (the number of albums each 
+ * artist has), and songCount (the number of songs each album has).
+ *  
+ * @returns {JSX.Element} The rendered component
+ */
 const Artist:React.FC<ArtistProps> = ({artistName, songCount, albumCount}) => {
   return (
     <>

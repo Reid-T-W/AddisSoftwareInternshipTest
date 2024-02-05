@@ -3,6 +3,7 @@ export { default as Body } from './Body';
 export {default as Geners} from './Genres/Geners'
 export { default as Albums } from './Albums/Albums';
 export { default as Artists } from './Artists/Artists'
+export { default as Songs } from './Songs/Songs';
 
 // Components used in Body.tsx
 export { default as Navbar } from './Navbar/Navbar';
@@ -11,7 +12,6 @@ export { default as Content } from './Content'
 
 // Components used in Content.tsx
 export { default as Sidebar } from './Sidebar/Sidebar';
-export { default as Songs } from './Songs/Songs';
 
 // Components used in Navbar
 export {default as Search} from './Navbar/Search';

@@ -2,12 +2,18 @@ import { SongType, StatsType } from '../../models/models';
 import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
+/**
+ * Songs State
+ * 
+ * @interface
+ */
 interface SongsState {
     songs: SongType[];
     editSong: boolean;
     stats: StatsType;
 }
 
+// Initial state of songs, editSong, and stats
 const initialState: SongsState = {
     songs: [],
     editSong: false,
@@ -22,7 +28,7 @@ const songsSlice = createSlice({
     initialState,
     reducers: {
 
-        // functions related to songs state
+        // Functions related to songs state
         fetchSongsRequested: (state, action) => {
             console.log("Fetching songs ...");
         },
@@ -34,6 +40,7 @@ const songsSlice = createSlice({
         },
         editSongSucceeded: (state, action) => {
             const songs = state.songs;
+            // Find and replace the song with the updated one
             songs.map(song => 
                 song._id === action.payload._id ? action.payload : song
             );
@@ -60,12 +67,12 @@ const songsSlice = createSlice({
             toast.error(`Failed to add song ${action.payload}`)
         },
 
-        // function related to the editSong state
+        // Function related to the editSong state
         setEditSong: (state, action) => {
             state.editSong = action.payload;
         },
 
-        // functions related to the totalNoOfSongs state
+        // Functions related to the totalNoOfSongs state
         getStatsSucceeded: (state, action) => {
             state.stats = action.payload;
         },

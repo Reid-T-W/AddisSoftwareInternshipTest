@@ -31,7 +31,7 @@ interface validationErrorsType {
 export const Songs = () => {
 
   // Local states to be used in this component only
-  // Used when adding a new song
+  // used when adding a new song
   const [localSongName, setLocalsongname] = useState("")
   const [localSongAlbum, setLocalsongalbum] = useState("")
   const [localSongArtist, setLocalsongartist] = useState("")

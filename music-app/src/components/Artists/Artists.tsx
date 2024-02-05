@@ -9,6 +9,14 @@ import { ArtistType } from '../../models/models';
 import { Artist, Footer } from '..';
 import { Flex } from 'rebass'
 
+/**
+ * Artists Component - Dispatches an action to get a list
+ * of artists and renders them using the Artist Component. 
+ * 
+ * @component
+ * 
+ * @returns {JSX.Element} The rendered component
+ */
 const Artists = () => {
 
   const artists = useSelector((state: RootState) => state.artists.artists)
