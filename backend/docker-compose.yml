@@ -13,14 +13,3 @@ services:
     command: npm start
     ports:
       - "4000:4000"
-# services:
-#   musicapp:
-#     build:
-#       context: .
-#     environment:
-#       PORT: ${PORT}
-#       MONGO: postgres
-#       DB_PASSWORD: postgres
-#       DB_HOST: postgres
-#     ports:
-#       - '4000:4000'
