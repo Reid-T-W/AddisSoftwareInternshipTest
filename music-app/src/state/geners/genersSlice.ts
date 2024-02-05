@@ -2,11 +2,16 @@ import { GenereType } from '../../models/models'
 import { createSlice } from "@reduxjs/toolkit";
 import { toast } from 'react-toastify';
 
+/**
+ * Generes State
+ * 
+ * @interface
+ */
 interface GeneresState {
     generes: GenereType[]
 }
 
-
+// Initial state of generes
 const initialState: GeneresState = {
     generes: []
 }

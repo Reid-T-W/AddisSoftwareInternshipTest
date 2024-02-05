@@ -1,11 +1,17 @@
 import { ArtistType} from '../../models/models'
 import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
-    
+
+/**
+ * Artists State
+ * 
+ * @interface
+ */
 interface ArtistsState {
     artists: ArtistType[]
 }
 
+// Initial State of artists
 const initialState: ArtistsState = {
     artists: []
 }
@@ -14,7 +20,7 @@ const artistsSlice = createSlice({
     name: "artists",
     initialState,
     reducers: {
-        // functions related to artists state
+        // Functions related to artists state
         fetchArtistsSucceeded: (state, action) => {
             state.artists = action.payload;
         },

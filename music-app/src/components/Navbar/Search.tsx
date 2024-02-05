@@ -8,10 +8,21 @@ import { useDispatch } from "react-redux";
 import { RootState } from "../../state/store"
 import { useNavigate } from 'react-router-dom';
 
-const Search = () => {
+/**
+ * Search Component, given a filter and a search term
+ * it dispatches an action, the action payload key
+ * varies based on the filter selected.
+ * 
+ * @component
+ * 
+ * @returns {JSX.Element} The rendered component
+ */
+export const Search = () => {
 
+  // local states only to be used with in this component
   const [selectedFilter, setSelectedFilter] = useState('genere')
   const [searchTerm, setSearchterm] = useState('')
+
   const dispatch = useDispatch();
 
   const navigate = useNavigate()
@@ -22,6 +33,8 @@ const Search = () => {
     });
   }
 
+  // search function that dispatches actions
+  // based on the selected filter
   const search = () => {
     navigateToSongs()
     .then(()=>{
@@ -57,6 +70,9 @@ const Search = () => {
     setSearchterm('')
   }
 
+  // This function is executed when a key is pressed
+  // while in the input field. The Enter key executes
+  // the search function.
   const handleKeyDown = (event: any) => {
     if (event.key === 'Enter') {
       search();
@@ -66,7 +82,7 @@ const Search = () => {
   return (
     <>
     <SearchStyled>
-
+      {/*Search term input field*/}
       <InputSearchStyled name='genere' type='text' 
                          placeholder={selectedFilter} 
                          className='other-song-details'
@@ -82,6 +98,7 @@ const Search = () => {
         <FaSearch color='black' size={23}/>
       </ButtonLogoStyled>
       
+      {/*Filters to choose from*/}
       <SelectStyled 
         name="filters" 
         id="filters" 

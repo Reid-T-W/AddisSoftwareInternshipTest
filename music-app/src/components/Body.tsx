@@ -5,11 +5,26 @@ import {
   Flex,
 } from "rebass"
 
-interface BodyProps {
+/**
+ * Props for the Body component.
+ * 
+ * @interface
+ */
+export interface BodyProps {
   Component: React.FC;
 }
-
-const Body:React.FC<BodyProps> = ({Component}) => {
+/**
+ * Body Component, renders the Navbar and another component
+ * passed to it via props
+ * 
+ * @component
+ * 
+ * @prop {BodyProps} Component - Either the Songs, Albums,
+ * Artists or Geners Component
+ *  
+ * @returns {JSX.Element} The rendered component
+ */
+export const Body:React.FC<BodyProps> = ({Component}) => {
   return (
     <Flex flexDirection={'column'} backgroundColor={'#000'} height={'100vh'}>
         <Navbar />       

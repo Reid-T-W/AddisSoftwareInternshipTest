@@ -4,13 +4,24 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../state/store"
 import { Text } from "rebass"
 
-const Stats = () => {
+/**
+ * Stats Component, upon loading this component dispatches
+ * an action that makes an api call to get stats related to 
+ * songs, albums, artits, and genres
+ * 
+ * @component
+ * 
+ * @returns {JSX.Element} The rendered component
+ */
+export const Stats = () => {
   const stats = useSelector((state: RootState) => state.songs.stats)
   const dispatch = useDispatch();
 
+  // Dispatch action
   useEffect(()=>{
     dispatch({type: 'GET_STATS_REQUESTED'})
   }, [dispatch])
+  
   return (
     <StatsStyled>
         <div>
