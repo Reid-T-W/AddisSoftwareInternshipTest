@@ -28,6 +28,10 @@ different filters is also supported.
 - [x] Search using different filters, search via title, genre, album, and artist  
 [Back to Top](#table-of-contents) 
 
+## To Do  
+- [ ] Search features currently works only from the Songs page,
+make it work from any page  
+
 ## Deployments   
 Frontend is deployed on vercel [Deployment link](https://addis-software-internship-test.vercel.app/)  
 Backend is deployed on render [Deployment link](https://addissoftwareinternshiptest-reid-t-w.onrender.com/api/v1)  
