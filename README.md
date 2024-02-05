@@ -6,9 +6,9 @@
 [Running Backend locally  ](#running-backend-locally)  
 [Running the Frontend locally](#running-the-frontend-locally)  
 [Implemented Features](https://github.com/Reid-T-W/ReConnect#implemented-features)  
-[Tech Stack](#tech-stack)
-[Authors](#authors)
-[Licensing](#licensing)
+[Tech Stack](#tech-stack)  
+[Authors](#authors)  
+[Licensing](#licensing)  
 
 ## Introduction  
 An app that is built for the Addis Software internship test. It can help view a list of saved songs. It also supports adding, updating, and deletion of a song. Moreover it also displays stats of songs, albums, artists and genres. Searching by
