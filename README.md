@@ -37,10 +37,14 @@ Clone the repo
 ```bash
     git clone https://github.com/Reid-T-W/AddisSoftwareInternshipTest.git  
 ```
-cd into the backend directory  
+Cd into the backend directory  
 ```bash
     cd backend  
 ```
+
+Setup your .env file using the example specified in the .env.example file  
+(i.e. as the app makes use of MongoDB Atlas you will need to create a database on MongoDB Atlas and use that uri in your .env file)    
+
 run docker compose up  
 ```bash
     docker compose up  
@@ -55,7 +59,9 @@ Clone the repo
 cd into the music-app directory  
 ```bash
 cd music-app
-```
+```  
+Setup your .env file using the example specified in the .env.example file  
+  
 Install dependencies  
 ```bash
 npm install
