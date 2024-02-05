@@ -5,7 +5,6 @@
 [Deployments](#deployments)  
 [Running Backend locally  ](#running-backend-locally)  
 [Running the Frontend locally](#running-the-frontend-locally)  
-[Implemented Features](https://github.com/Reid-T-W/ReConnect#implemented-features)  
 [Tech Stack](#tech-stack)  
 [Authors](#authors)  
 [Licensing](#licensing)  
