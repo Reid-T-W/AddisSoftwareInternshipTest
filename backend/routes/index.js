@@ -43,19 +43,30 @@ router.delete('/songs/:id', deleteSong)
 // PATCH route to update a song
 router.patch('/songs/:id', updateSong)
 
-// GET route to get all stats
+// GET route to get all stats, the total number
+// of songs, albums, artists, and genres
 router.get('/stats', getStats)
 
 
-
 // ROUTES RELATED TO ALBUMS
+
+// GET route to get a list of all albums
+// along with the number of songs in each
+// of them
 router.get('/albums', getAlbums)
 
-// ROUTES RELATED TO GENERES
+// ROUTES RELATED TO GENRES
+
+// GET route to get a list of all genres
+// along with the number of songs in each
+// of them
 router.get('/generes', getGeneres)
 
 // ROUTES RELATED TO ARTISTS
-// GET all artists along with their number of songs
+
+// GET route to get a list of all artists
+// along with the number of songs and albums
+// in each
 router.get('/artists', getArtists)
 
 

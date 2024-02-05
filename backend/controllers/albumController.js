@@ -1,7 +1,8 @@
 const Song = require('../models/songModel')
 const mongoose = require('mongoose')
 
-// get all albums
+// Get all albums along with each of their
+// song counts
 const getAlbums = async(req, res) => {
     
     const albumsWithSongCount = await Song.aggregate([

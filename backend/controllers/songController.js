@@ -1,14 +1,14 @@
 const Song = require('../models/songModel')
 const mongoose = require('mongoose')
 
-// get all songs
+// Get all songs
 const getSongs = async(req, res) => {
-    // newly added songs will be listed first
+    // Newly added songs will be listed first
     const songs = await Song.find({}).select('title album artist genere').sort({createdAt: -1})
     res.status(200).json(songs)
 }
 
-// get a single song
+// Get a single song
 const getSingleSong = async(req, res) => {
     const { id } = req.params
 
@@ -25,7 +25,7 @@ const getSingleSong = async(req, res) => {
     res.status(200).json(song)
 }
 
-// create a new song
+// Create a new song
 const createSong = async(req, res) => {
     const {title, album, artist, genere} = req.body
     try {
@@ -38,7 +38,7 @@ const createSong = async(req, res) => {
     }
 }
 
-// update a song
+// Update a song
 const updateSong = async(req, res) => {
     const { id } = req.params
 
@@ -57,7 +57,7 @@ const updateSong = async(req, res) => {
     res.status(200).json(song)
 }
 
-// remove a song
+// Remove a song
 const deleteSong = async(req, res) => {
     const {id} = req.params
 
@@ -74,14 +74,14 @@ const deleteSong = async(req, res) => {
     res.status(200).json(song)
 }
 
-// get list of filtered songs
+// Get list of filtered songs
 const filterSongs = async(req, res) => {
     const filteredSongs = await Song.find(req.query).sort({createdAt: -1})
     res.status(200).json(filteredSongs)
 }
 
 
-// get all stats
+// Get all stats
 const getStats = async (req, res) => {
     // get total number of songs
     const songsCount = await Song.countDocuments({})
